@@ -1,0 +1,7 @@
+pub const SECONDS_PER_WEEK: u64 = 7 * 24 * 60 * 60; // 604800
+pub const SECONDS_PER_DAY: u64 = 24 * 60 * 60; // 86400
+pub const SECONDS_PER_HOUR: u64 = 60 * 60; // 3600
+pub const SECONDS_PER_MINUTE: u64 = 60;
+
+pub const NANOSECONDS_PER_MICROSECOND: u64 = 1000;
+pub const NANOSECONDS_PER_MILLISECOND: u64 = 1_000_000;

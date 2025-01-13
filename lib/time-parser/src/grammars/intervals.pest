@@ -1,0 +1,25 @@
+WHITESPACE = _{ " " | "\t" | "\r" | "\n" }
+
+duration_hms = { hms_hour ~ ":" ~ hms_minute ~ ":" ~ hms_second }
+hms_digits = _{ ASCII_DIGIT{2} }
+hms_hour = { hms_digits }
+hms_minute = { hms_digits }
+hms_second = { hms_digits }
+
+units_nanoseconds = { "nanoseconds" | "nanosecond" | "ns" | "n" }
+units_microseconds = { "microseconds" | "microsecond" | "us" | "µs" | "u" | "µ" }
+units_milliseconds = { "milliseconds" | "millisecond" | "ms" }
+units_seconds = { "seconds" | "second" | "sec" | "s" }
+units_minutes = { "minutes" | "minute" | "min" | "m" }
+units_hours = { "hours" | "hour" | "hr" | "h" }
+units_days = { "days" | "day" | "d" }
+units_weeks = { "weeks" | "week" | "w" }
+
+unit = _{ units_nanoseconds | units_microseconds | units_milliseconds | units_seconds | units_minutes | units_hours | units_days | units_weeks }
+shorthand_digits = @{ ASCII_DIGIT+ ~ ( "_" ~ ASCII_DIGIT{3} )* }
+duration_shorthand = { (shorthand_digits ~ WHITESPACE? ~ unit)+ }
+
+duration = { duration_hms | duration_shorthand }
+
+text = _{ (!duration ~ ANY)+ }
+durations = _{ (text* ~ duration)+ }

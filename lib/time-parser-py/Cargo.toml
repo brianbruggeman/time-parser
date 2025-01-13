@@ -1,0 +1,15 @@
+[package]
+name = "time-parser-py"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "time_parser"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.23.4", features = ["extension-module"] }
+time-parser = { path = "../time-parser" }
+
+[dev-dependencies]
+rstest.workspace = true
