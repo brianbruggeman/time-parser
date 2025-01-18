@@ -1,16 +1,13 @@
 use std::time::Duration;
+
 use chrono::Duration as ChronoDuration;
+use once_cell::sync::Lazy;
 use regex::Regex;
 use time_parser::{Error, Result};
-use once_cell::sync::Lazy;
 
-static HMS_PATTERN: Lazy<Regex> = Lazy::new(|| {
-    Regex::new(r#"^(\d+):(\d+):(\d+)$"#).expect("Invalid HMS pattern")
-});
+static HMS_PATTERN: Lazy<Regex> = Lazy::new(|| Regex::new(r#"^(\d+):(\d+):(\d+)$"#).expect("Invalid HMS pattern"));
 
-static SHORTHAND_PATTERN: Lazy<Regex> = Lazy::new(|| {
-    Regex::new(r"(\d+(?:_\d{3})*)([wdhms])").expect("Invalid shorthand pattern")
-});
+static SHORTHAND_PATTERN: Lazy<Regex> = Lazy::new(|| Regex::new(r"(\d+(?:_\d{3})*)([wdhms])").expect("Invalid shorthand pattern"));
 
 pub fn parse_duration_hms(interval: impl AsRef<str>) -> Result<Duration> {
     let interval = interval.as_ref();

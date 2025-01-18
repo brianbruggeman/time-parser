@@ -1,4 +1,3 @@
-
 pub trait DurationFormatter {
     fn parse<S>(interval: S) -> crate::Result<Self>
     where
