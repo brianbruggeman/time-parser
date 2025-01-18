@@ -2,7 +2,7 @@
 
 # time-parser
 
-A simple library for parsing strings into various time formats.
+A simple, performant library for parsing strings into various time formats.
 
 ## Features
 
