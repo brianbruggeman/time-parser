@@ -1,4 +1,4 @@
-[![Rust CI](https://github.com/brianbruggeman/time-parser/actions/workflows/rust.yml/badge.svg)](https://github.com/brianbruggeman/time-parser/actions/workflows/rust.yml)[!Python CI](https://github.com/brianbruggeman/time-parser/actions/workflows/python.yml/badge.svg)(https://github.com/brianbruggeman/time-parser/actions/workflows/python.yml)
+[![Rust CI](https://github.com/brianbruggeman/time-parser/actions/workflows/rust.yml/badge.svg)](https://github.com/brianbruggeman/time-parser/actions/workflows/rust.yml)[![Python CI](https://github.com/brianbruggeman/time-parser/actions/workflows/python.yml/badge.svg)](https://github.com/brianbruggeman/time-parser/actions/workflows/python.yml)
 
 # time-parser
 
