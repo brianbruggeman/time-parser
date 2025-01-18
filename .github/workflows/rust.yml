@@ -1,0 +1,48 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cargo_fmt:
+    name: CI
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+            fetch-depth: 0
+
+      - name: Install rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Install nightly with rustfmt and clippy
+        uses: dtolnay/rust-toolchain@nightly
+        with:
+          components: rustfmt, clippy
+
+      - name: Style
+        run: |
+          cd lib/time-parser
+          cargo +nightly fmt -- --check
+
+      - name: Lint
+        run: |
+          cd lib/time-parser
+          cargo +nightly clippy
+
+      - name: Build
+        run: |
+          cd lib/time-parser
+          cargo build
+
+      - name: Test
+        run: |
+          cd lib/time-parser
+          cargo test
