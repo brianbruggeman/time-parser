@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/brianbruggeman/time-parser.svg?branch=master)](https://travis-ci.org/brianbruggeman/time-parser)
+[![Rust CI](https://github.com/brianbruggeman/time-parser/actions/workflows/rust.yml/badge.svg)](https://github.com/brianbruggeman/time-parser/actions/workflows/rust.yml)[!Python CI](https://github.com/brianbruggeman/time-parser/actions/workflows/python.yml/badge.svg)(https://github.com/brianbruggeman/time-parser/actions/workflows/python.yml)
 
 # time-parser
 
